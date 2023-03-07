@@ -1,0 +1,45 @@
+.userprofile
+{
+ 
+  border: solid 2px #333;
+  height: 260px;
+  border-radius: 15px;
+  width:100%; 
+  padding-left: 10px;
+  padding-right: 10px;
+  /* margin-left: 75px; */
+
+}
+
+.img_profile {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+input
+{
+  border: none;
+  width: 45%;
+}  
+
+
+table {
+  /* font-family: arial, sans-serif; */
+  border-collapse: collapse;
+  width: 100%;
+  font-size: small;
+}
+
+td, th {
+  border: 1px solid #b7c7ff;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #faf9fb;
+}
+tr:nth-child(odd) {
+  background-color:  #dbe3fe;
+}

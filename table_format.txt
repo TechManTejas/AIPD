@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<style>
+table {
+   
+    border-collapse: collapse;
+    width: 80%;
+    font-size: small;
+
+  }
+  
+  td, th {
+    border: 1px solid #b7c7ff;
+    text-align: left;
+    padding: 8px;
+    height: 10px;
+    width:50%;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #faf9fb;
+  }
+  tr:nth-child(odd) {
+    background-color:  #dbe3fe;
+  }
+</style>
+<body>
+
+<h2>TD elements define table cells</h2>
+
+<table style="width:100%">
+<tr><td colspan="2" style=" text-align: center;font-size:medium"><b>User Details</b></td></tr>
+  <tr>
+    <td>Patient Name</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Date of Birth</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Patient ID</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Doctor Name</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Doctor ID</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Doctor Contact Number</td>
+    <td>Linus</td>
+  </tr>
+</table>
+
+<br><hr><hr><br>
+<table style="width:100%">
+<tr><td colspan="2" style=" text-align: center;font-size:medium"><b>Exercise Details</b></td></tr>
+  <tr>
+    <td>Date | Time</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Exercise | Category</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Exercise Difficulty</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Repetitions | Sets</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Total Count Expected | Performed</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Time Per Repetition</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Average Speed</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>Total Time Taken</td>
+    <td>Linus</td>
+  </tr>
+</table>
+<br><hr><hr><br>
+<table style="width:100%">
+<tr><td colspan="2" style=" text-align: center;font-size:medium"><b>General Questions</b></td></tr>
+  <tr>
+    <td style=" text-align: center;font-size:medium"><b>Before Exercise</b></td>
+    <td style=" text-align: center;font-size:medium"><b>After Exercise</b></td>
+  </tr>
+  <tr>
+    <td>How are you feeling now? |</td>
+    <td>How are you feeling now? |</td>
+  </tr>
+  <tr>
+    <td>How is the pain now? | </td>
+    <td>How is the pain now? | </td>
+  </tr>
+  <tr>
+    <td>Are you done with your meal? |</td>
+    <td>Are you done with your meal? |</td>
+  </tr>
+  <tr>
+    <td>Did you watch the exercise videos |</td>
+    <td>Do you agree with the report created? |</td>
+  </tr>
+  <tr>
+    <td>Rate our Exercise Information Catalog |</td>
+    <td>Rate overall exercise experience with Tool |</td>
+  </tr>
+  
+</table>
+
+
+</body>
+</html>
+

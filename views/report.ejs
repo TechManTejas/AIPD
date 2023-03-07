@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  
+  <script src="js/report.js" type="module" crossorigin="anonymous"></script>
+  
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .Row {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      /*Optional*/
+      /*Optional*/
+      border-spacing: 10px;
+      /*Optional*/
+    }
+
+    .Column {
+      display: table-cell;
+      border: solid 2px #333;
+      margin: 10px;
+      /*Optional*/
+    }
+
+    .Column1 {
+      display: table-cell;
+      border: solid 2px #333;
+      height: 60px;
+      margin: 10px;
+      border-radius: 15px;
+      /*Optional*/
+    }
+
+    .ColumnMain:nth-of-type(1) {
+      height: 590px;
+      width: 300px;
+    }
+
+    .ColumnMain:nth-of-type(2) {
+      flex-grow: 2;
+      height: 590px;
+    }
+
+    .ColumnMain:nth-of-type(3) {
+      height: 590px;
+      width: 300px;
+    }
+
+    .Column1:nth-of-type(1) {
+      width: 300px;
+    }
+
+    .Column1:nth-of-type(2) {
+      flex-grow: 2;
+      width: 550px;
+    }
+
+    .Column1:nth-of-type(3) {
+      width: 300px;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    form {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .report {
+      height: 85%;
+    }
+
+    .subColumn {
+      border: solid 2px #333;
+      height: 100%;
+      width: 90%;
+      margin: auto
+    }
+
+    input {
+      /* border: none; */
+      width: 45%;
+    }
+    .input1 {
+      width: 41%;
+      border:#0a0f0d;
+    }
+
+    .block {
+      display: block;
+      width: 100%;
+      border: none;
+      background-color: #0a0f0d;
+      color: white;
+      padding: 14px 28px;
+      font-size: 30px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 15px;
+      font-family: 'Times New Roman';
+    }
+
+    .block:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .column {
+      float: left;
+      width: 70%;
+      height: 5%;
+    }
+
+    .column1 {
+      float: left;
+      width: 10%;
+      height: 5%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    table {
+    /* font-family: arial, sans-serif; */
+    border-collapse: collapse;
+    width: 100%;
+    font-size: small;
+    height: 30px;
+  }
+  
+  td, th {
+    border: 1px solid #b7c7ff;
+    text-align: left;
+    padding: 8px;
+    height: 12px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #faf9fb;
+  }
+  tr:nth-child(odd) {
+    background-color:  #dbe3fe;
+  }
+  select {
+    border: 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+.userprofile
+  {
+    display: table-cell;
+    border: solid 2px #333;
+    height: 260px;
+    border-radius: 15px;
+    width: 195px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+  .docprofile
+  {
+    display: table-cell;
+    border: solid 2px #333;
+    height: 250px;
+    border-radius: 15px;
+    width: 195px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+  .profile{
+    display:flex;
+    flex-direction: column;
+  }
+  form {
+      padding: 10px;
+      text-align: left;
+      height: 160px;
+      width: 200px;
+    }
+    .img_profile {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+
+    .block_dis {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 65px;
+  } 
+  .block_oth {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 65px;    
+  } 
+  .block_oth:hover
+  {
+    background-color: #ddd;
+      color: black;
+  }
+
+  .block_SOS {
+    display: block;
+    width: 300px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 15px;
+   
+  } 
+  .ColumnMain1:nth-of-type(1) {
+    height: 60;
+    width: 300px;
+  }
+
+  .ColumnMain1:nth-of-type(2) {
+    flex-grow: 2;
+    height: 60;
+    width: 400px;
+  }
+
+  .ColumnMain1:nth-of-type(3) {
+    height: 60;
+    width: 300px;
+    border: none;
+  }
+  /* .column1
+  {
+    width: 40%;
+  } */
+/* .row{
+  width: 100%;
+} */
+  </style>
+
+</head>
+
+
+<body>
+  <div class="Row">
+    <div class="Column ColumnMain">
+      <div class="profile">
+      <div class="userprofile" style="margin-top: 20px;float: left;margin-left: 40px;">
+        <p><b>USER PROFILE</b></p>
+        <img class="img_profile" src="images/Profile.png" alt="">
+        <div class="details">
+          <form>
+            <label for="name">Name:</label>
+            <input class="input1" type="text" id="name" name="name" readonly><br><br>
+            <label for="DateOfBirth">Date of Birth:</label>
+            <input class="input1"type="text" id="DOB" name="DOB" readonly><br><br>
+            <label for="Patient ID">Patient ID:</label>
+            <input class="input1" type="text" id="PID" readonly placeholder><br>
+          </form>
+        </div>
+      </div>
+      <br>
+      <div class="docprofile" style="margin-top: 5px;float: left;clear: left;margin-left: 40px;">
+        <p><b>DOCTOR PROFILE</b></p>
+        <!-- <div cla> -->
+        <img class="img_profile" src="images/p.jpg" alt="">
+          <form>
+            <label for="Doctor Name">Doctor Name:</label>
+            <input class="input1" type="text" id="Doctor_name" readonly placeholder><br><br>
+            <label for="Doctor Number">Doctor Number:</label>
+            <input class="input1" type="text" id="Doctor_number" readonly placeholder><br><br>
+            <label for="Doctor email">Doctor email:</label>
+            <input class="input1" type="text" id="Doctor_email" readonly placeholder><br><br>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="Column ColumnMain">
+      <div class="report">
+        <p><b>REPORT PAGE</b></p>
+        <div class="subColumn">
+          <div class="subColumnInfo">
+            <div>REPORT</div>
+            <hr>
+            <div class="row">
+              <div class="column">Exercise : </div>
+              <div class="column1" id="Exercise"></div>
+            </div>
+            <div class="row">
+              <div class="column">Exercise Category : </div>
+              <div class="column1" id="Exercise_category"></div>
+            </div>
+            <div class="row">
+              <div class="column">Exercise Difficulty : </div>
+              <div class="column1" id="Exercise_difficulty"></div>
+            </div>
+            <div class="row">
+              <div class="column">Time Taken/Repetition : </div>
+              <div class="column1" id="time"></div>
+            </div>
+            <div class="row">
+              <div class="column">Time Taken To Finish : </div>
+              <div class="column1" id="total_time"></div>
+            </div>
+            <div class="row">
+              <div class="column">Average Speed : </div>
+              <div class="column1" id="speed"></div>
+            </div>
+            <div class="row">
+              <div class="column">Repetitions : </div>
+              <div class="column1" id="counts"></div>
+            </div>
+            <div class="row">
+              <div class="column">Sets : </div>
+              <div class="column1" id="Sets"></div>
+            </div>
+            <div class="row">
+              <div class="column">Total Count(Actual) : </div>
+              <div class="column1" id="total_a"></div>
+            </div>
+            <div class="row">
+              <div class="column">Total Count(Expected) : </div>
+              <div class="column1" id="total_e"></div>
+            </div>
+            <div class="row">
+              <div class="column">Date : </div>
+              <div class="column1" id="date"></div>
+            </div>
+            <div class="row">
+              <div class="column">Time : </div>
+              <div class="column1" id="time_d"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="Column ColumnMain">
+<table>
+  <br><br>
+  <center><b>USER INPUT</b></center><br><hr>
+  <br><br><br>
+      <form id="FinalReport" action="/report_transport" method="post">
+        
+       <tr> 
+       <td><label for="q1">How are you feeling now ? </label></td>
+       <td> <select id="qu1" name="q1">
+        <option value="1" selected="selected">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </select></td>
+        </tr>
+        <tr>
+        <td><label for="q2">How is the pain now ?</label></td>
+        <td><select id="qu2" name="q2">
+          <option value="1" selected="selected">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+        </select></td>
+        </tr>
+        <tr>
+        <td><label for="q3">How would you rate our AI-based Guidance ?</label></td>
+        <td><select id="qu3" name="q3">
+          <option value="1" selected="selected">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+        </select></td>
+        </tr>
+        <tr>
+          <td><label for="q4">Do you agree with the report created ?</label></td>
+          <td><select id="qu4" name="q4">
+            <option value="1" selected="selected">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+          </select></td>
+          </tr>
+          <tr>
+            <td><label for="q5">Rate overall exercise experience with Tool </label></td>
+            <td><select id="qu5" name="q5">
+              <option value="1" selected="selected">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+            </select></td>
+            </tr>
+     
+
+      </form>
+    </table>
+
+
+    </div>
+
+  </div>
+
+  <div class="Row">
+    <div class="Column1 ColumnMain1 block_oth">
+        <br>
+        <center> <b>
+          <a href="/" style="font-size: 30px;font-family: 'Times New Roman';">Home</a>
+            </b></center>
+    </div>
+    <div class="Column1 ColumnMain1 block_dis">
+        <br>
+        <center><b>Legal Content/Disclaimer</b> : The above tool is based on interpretation . In case of any
+            disparity between the
+            clinical and radiological findings, a repeat/review examination may be requested.
+            This report is not valid for medico-legal purposes.</center>
+    </div>
+    <div class="Column1 ColumnMain1">
+      <input id="report_submit" type="submit" class="block" form="FinalReport" value="Save" style="font-weight: bold;">
+    </div>
+</div>
+
+
+  
+</body>
+
+</html>

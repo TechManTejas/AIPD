@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+ 
+  <script src="js/reportTemplate.js" type="module" crossorigin="anonymous"></script>
+  
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .Row {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      /*Optional*/
+      /*Optional*/
+      border-spacing: 10px;
+      /*Optional*/
+    }
+
+    .Column {
+      display: table-cell;
+      border: solid 2px #333;
+      margin: 10px;
+      /*Optional*/
+    }
+
+    .Column1 {
+      display: table-cell;
+      border: solid 2px #333;
+      height: 60px;
+      margin: 10px;
+      border-radius: 15px;
+      /*Optional*/
+    }
+
+    .ColumnMain:nth-of-type(1) {
+      height: 590px;
+      width: 300px;
+    }
+
+    .ColumnMain:nth-of-type(2) {
+      flex-grow: 2;
+      height: 590px;
+    }
+
+    .ColumnMain:nth-of-type(3) {
+      height: 590px;
+      width: 300px;
+    }
+
+    .Column1:nth-of-type(1) {
+      width: 300px;
+    }
+
+    .Column1:nth-of-type(2) {
+      flex-grow: 2;
+      width: 550px;
+    }
+
+    .Column1:nth-of-type(3) {
+      width: 300px;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    form {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .report {
+      height: 80%;
+    }
+
+    .subColumn {
+      border: solid 2px #333;
+      height: 100%;
+      width: 90%;
+      margin: auto
+    }
+
+    input {
+      /* border: none; */
+      width: 45%;
+      background-color: transparent;
+      border: none;
+    }
+    textarea
+    {
+        width: 100%;
+        height: 400px;
+      background-color: transparent;
+      border: none;
+     
+    }
+    .input1 {
+      width: 41%;
+      border:#0a0f0d;
+    }
+
+    .block {
+      display: block;
+      width: 100%;
+      border: none;
+      background-color: #0a0f0d;
+      color: white;
+      padding: 14px 28px;
+      font-size: 30px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 15px;
+      font-family: 'Times New Roman';
+    }
+
+    .block:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .column {
+      float: left;
+      width: 70%;
+      height: 5%;
+    }
+
+    .column1 {
+      float: left;
+      width: 10%;
+      height: 5%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    table {
+    /* font-family: arial, sans-serif; */
+    border-collapse: collapse;
+    width: 100%;
+    font-size: small;
+    height: 30px;
+  }
+  
+  td, th {
+    border: 1px solid #b7c7ff;
+    text-align: left;
+    padding: 8px;
+    height: 12px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #faf9fb;
+  }
+  tr:nth-child(odd) {
+    background-color:  #dbe3fe;
+  }
+  select {
+    border: 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+.userprofile
+  {
+    display: table-cell;
+    border: solid 2px #333;
+    height: 260px;
+    border-radius: 15px;
+    width: 195px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+  .docprofile
+  {
+    display: table-cell;
+    border: solid 2px #333;
+    height: 250px;
+    border-radius: 15px;
+    width: 195px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+  .profile{
+    display:flex;
+    flex-direction: column;
+  }
+  form {
+      padding: 10px;
+      text-align: left;
+      height: 160px;
+      width: 200px;
+    }
+    .img_profile {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+
+    .block_dis {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 65px;
+  } 
+  .block_oth {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 65px;    
+  } 
+  .block_oth:hover
+  {
+    background-color: #ddd;
+      color: black;
+  }
+
+  .block_SOS {
+    display: block;
+    width: 300px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 15px;
+   
+  } 
+  .ColumnMain1:nth-of-type(1) {
+    height: 60;
+    width: 300px;
+  }
+
+  .ColumnMain1:nth-of-type(2) {
+    flex-grow: 2;
+    height: 60;
+    width: 400px;
+  }
+
+  .ColumnMain1:nth-of-type(3) {
+    height: 60;
+    width: 300px;
+    border: none;
+  }
+
+  </style>
+
+</head>
+
+
+<body id="body">
+  <div class="Row">
+    <div class="Column ColumnMain">
+      
+    </div>
+
+    <div class="Column ColumnMain">
+      <div class="report">
+        <p><b>FINAL REPORT</b></p>
+        <div class="subColumn">
+            <table>
+                <form id="SendReport" method="post" action="/report">
+                        <tr>
+                        <td><label for="q1">Doctor Email ID</label></td>
+                        <td><input type="text" id="email" name="email" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label for="q1">FINAL REPORT</label></td>
+                            <td><textarea id="report" name="report" readonly></textarea></td>
+                            </tr>
+                           
+                             
+                              <textarea id="report_html" name="report_html" readonly hidden></textarea>
+                              
+                </form>
+                </table>
+          
+
+        </div>
+      </div>
+    </div>
+
+    <div class="Column ColumnMain">
+
+
+
+    </div>
+
+  </div>
+
+  <div class="Row">
+    <div class="Column1 ColumnMain1 block_oth">
+        <br>
+        <center> <b>
+          <a href="/" style="font-size: 30px;font-family: 'Times New Roman';">Home</a>
+            </b></center>
+    </div>
+    <div class="Column1 ColumnMain1 block_dis">
+        <br>
+        <center><b>Legal Content/Disclaimer</b> : The above tool is based on interpretation . In case of any
+            disparity between the
+            clinical and radiological findings, a repeat/review examination may be requested.
+            This report is not valid for medico-legal purposes.</center>
+    </div>
+    <div class="Column1 ColumnMain1">
+      <input id="report_submit" type="submit" class="block" form="SendReport" value="Share" style="font-weight: bold;" ></button>
+    </div>
+</div>
+
+
+  
+</body>
+
+</html>

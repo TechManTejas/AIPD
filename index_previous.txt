@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d/control_utils_3d.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+  <script src=<%=exercise %> type = "module" crossorigin = "anonymous" ></script>
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .Row {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      /*Optional*/
+      /*Optional*/
+      border-spacing: 10px;
+      /*Optional*/
+    }
+
+    .Column {
+      display: table-cell;
+      border: solid 2px #333;
+      margin: 10px;
+      /*Optional*/
+    }
+
+    .Column1 {
+      display: table-cell;
+      border: solid 2px #333;
+      height: 60px;
+      margin: 10px;
+      border-radius: 15px;
+      /*Optional*/
+    }
+
+    .ColumnMain:nth-of-type(1) {
+      height: 590px;
+      width: 300px;
+    }
+
+    .ColumnMain:nth-of-type(2) {
+      flex-grow: 2;
+      height: 590px;
+    }
+
+    .ColumnMain:nth-of-type(3) {
+      height: 590px;
+      width: 300px;
+    }
+
+    .Column1:nth-of-type(1) {
+      width: 300px;
+    }
+
+    .Column1:nth-of-type(2) {
+      flex-grow: 2;
+      width: 550px;
+    }
+
+    .Column1:nth-of-type(3) {
+      width: 300px;
+    }
+
+    .InfoRow {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .InfoColumn {
+      height: 20px;
+    }
+
+    .InfoColumn p {
+      margin: 0;
+    }
+
+    .volume-slider1 {
+      width: 5px;
+      background-color: rgb(221, 255, 0);
+    }
+
+    .volume-slider2 {
+      width: 5px;
+      background-color: rgb(89, 0, 255);
+    }
+
+    .block {
+      display: block;
+      width: 100%;
+      border: none;
+      background-color: #0a0f0d;
+      color: white;
+      padding: 14px 28px;
+      font-size: 30px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 15px;
+      font-family: 'Times New Roman';
+    }
+
+    .block:hover {
+      background-color: #ddd;
+      color: black;
+      border: none;
+    }
+
+    .block1 {
+      display: block;
+      width: 100%;
+      margin-left: 13px;
+      background-color: #0a0f0d;
+      color: white;
+      padding: 14px 28px;
+      font-size: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .block1:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .column_button {
+      margin-left: 90px;
+    }
+
+    .spacing {
+      width: 100px;
+    }
+
+
+
+    #counter1 {
+      border-radius: 50%;
+      color: rgb(255, 255, 255);
+      background-color: #000;
+      margin-top: 5px;
+    }
+
+
+
+    #sets {
+      border-radius: 50%;
+      color: rgb(255, 255, 255);
+      background-color: #000;
+
+    }
+
+    table {
+      /* font-family: arial, sans-serif; */
+      border-collapse: collapse;
+      width: 75%;
+      font-size: medium;
+      margin-left: 40px;
+
+    }
+
+    td,
+    th {
+      border: 1px solid #b7c7ff;
+      text-align: center;
+      padding: 1px;
+      height: 10px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #faf9fb;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #dbe3fe;
+    }
+    .block_dis {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 65px;
+  } 
+  .block_oth {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 65px;    
+  } 
+  .block_oth:hover
+  {
+    background-color: #ddd;
+      color: black;
+  }
+
+  .block_SOS {
+    display: block;
+    width: 300px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 15px;
+   
+  } 
+  .ColumnMain1:nth-of-type(1) {
+    height: 60;
+    width: 300px;
+  }
+
+  .ColumnMain1:nth-of-type(2) {
+    flex-grow: 2;
+    height: 60;
+    width: 400px;
+  }
+
+  .ColumnMain1:nth-of-type(3) {
+    height: 60;
+    width: 300px;
+    border: none;
+  }
+
+    
+  </style>
+
+</head>
+
+<body>
+  <div class="Row">
+    <div class="Column ColumnMain">
+      <div class="card" style="height: 550px;width: 300px; ">
+        <div class="card-header">
+          <center><b>STICK FIGURE GUIDE</b></center>
+        </div>
+        <div class="card-body">
+          <canvas class="output_canvas1" width="300px" height="500px"></canvas>
+        </div>
+        <div>
+          <p id="Hold" style="font-size:xx-large;font-family:'Times New Roman';color: green;margin-top: -5px;font-weight: bolder; "><b></b></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="Column ColumnMain">
+
+
+      <div style="width:80px; height: 60px; margin-left: 8px; font-size: 55px;padding-top: 10px;padding-bottom: 10px; text-align: center;font-weight: bold;"
+        id="counter1">0
+
+      </div>
+       
+
+      <div class="card" style="height: 550px;width: 650px; margin: auto;">
+
+        <!-- <div class="card-header"> 
+                <center>OUTPUT WINDOW 2</center> 
+              </div> -->
+        <div class="card-body">
+          <canvas class="output_canvas2" width="650px" height="500px"></canvas>
+        </div>
+
+      </div>
+
+      <div
+        style="margin-left: 795px; width:80px; margin-top: -630px;height: 60px;font-size: 55px;padding-top: 10px;padding-bottom: 10px;font-weight: bold;"
+        id="sets">
+        1
+      </div>
+
+
+
+    </div>
+
+    <div class="Column ColumnMain">
+      <div class="card" style="height: 550px;width: 300px;margin:auto;">
+        <div class="card-header" style="margin: auto;">
+          <b> INFORMATION BOX </b>
+        </div>
+        <div class="card-body">
+          <video class="input_video"></video>
+          <!-- <div class="Row InfoRow"> 
+            <div class="Column InfoColumn"> 
+              <p  style="color: red;">Count Value : 0</p> 
+            </div> 
+          </div>  -->
+          <br>
+
+          <div class="Row ">
+            <div class="volume-slider-con InfoColumn" id="vol1" style="margin:5px auto 5px auto;">
+              Right Extension
+            </div>
+            <div class="volume-slider1" id="vol11"></div>
+          </div>
+          <div class="Row">
+            <div class="volume-slider-con InfoColumn" id="vol2" style="margin:5px auto 5px auto;">
+              Left Extension
+            </div>
+            <div class="volume-slider2" id="vol22"></div>
+          </div>
+        </div>
+        <br>
+        <div class="Row">
+          <img alt="Avatar" class="image" style="width:2900px; height:135px;padding: 5px;" src=<%=image%>>
+        </div>
+        <table>
+          <tr>
+            <td>Speed mm/s</td>
+            <td>
+              <div class="Row">
+                <p id="speed" style="margin: 5px auto 5px auto;">0 seconds</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Time/Rep</td>
+            <td>
+              <div class="Row">
+                <p id="timer" style="margin:5px auto 5px auto;">0 mm/s</p>
+              </div>
+            </td>
+          </tr>
+
+
+          <!-- <div class="Row"> 
+          <textarea id="coord"></textarea> 
+         </div> -->
+
+          <div class="Row">
+            <p id="backbone" style="margin:5px auto 5px auto;border-style: solid; height: 20px;padding: 1px;"></p>
+          </div>
+
+          <div class="Row">
+            <p id="error" style="margin:5px auto 5px auto;border-style: solid;height: 20px; padding: 1px;">PLease Look
+              To Make Corrections</p>
+          </div>
+
+
+          <!-- <div class="Row"> 
+          <pre id="steps" style="margin:5px auto 1px auto;border-style: solid;padding: 3px;"><b>1) Keep your body straight 
+2) Extend your arms 
+3) Hold the position for 3 sec 
+4) Contract your both arms 
+5) Hold the position for 3 sec 
+6) Repeat the same steps</b> 
+</pre> 
+        </div>  -->
+          <br>
+
+          <tr>
+            <td>Exercise</td>
+            <td>
+              <div class="Row">
+                <p id="exercise" style="margin:5px auto 5px auto;"></p>
+              </div>
+            </td>
+          </tr>
+          <!-- <div class="Row"> 
+          <p id="sets" class="spacing"  style="margin:5px auto 5px auto;border-style: solid;padding: 3px; color: red;">Set : 1</p> 
+        </div> -->
+          <tr>
+            <td>Difficulty</td>
+            <td>
+              <div class="Row">
+                <p id="Exercise_difficulty" style="margin:5px auto 5px auto;"></p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Category</td>
+            <td>
+              <div class="Row">
+                <p id="exercise_category" style="margin:5px auto 5px auto;"></p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <div class="Row">
+          <div class="column_button">
+            <button type="button" class="block1" id="stop_button">END</button>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- <div class="Row">
+    <div class="Column1">
+      <button type="button" class="block"><a href="/">Home</a></button>
+    </div>
+    <div class="Column1">
+      <button type="button" class="block">SOS</button>
+
+    </div>
+    <div class="Column1">
+      <button type="button" class="block"><a href="/report">Report</a></button>
+    </div>
+  </div> -->
+  <div class="Row">
+    <div class="Column1 ColumnMain1 block_oth">
+        <br>
+        <center> <b>
+          <a href="/" style="font-size: 30px;font-family: 'Times New Roman';">Home</a>
+            </b></center>
+    </div>
+    <div class="Column1 ColumnMain1 block_dis">
+        <br>
+        <center><b>Legal Content/Disclaimer</b> : The above tool is based on interpretation . In case of any
+            disparity between the
+            clinical and radiological findings, a repeat/review examination may be requested.
+            This report is not valid for medico-legal purposes.</center>
+    </div>
+    <div class="Column1 ColumnMain1">
+      <button type="button" class="block"><a href="/report">Report</a></button>
+    </div>
+</div>
+
+</body>
+
+</html>

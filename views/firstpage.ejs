@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/format.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+</head>
+
+<body>
+
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#Product">Our Product</a></li>
+        <li><a href="#Blog">Blog</a></li>
+    </ul>
+    <div class="container" style="padding: 10px;">
+        <div class="Row">
+            <div class="Column ColumnMain">
+                <div class="userprofile">
+                    <center>
+                        <p>User Profile</p><img class="img_profile" src="images/Profile.png" alt="">
+                    </center>
+                    <form>
+                        <br>
+                        <label for="name">Name:</label>
+                        <input class="input1" type="text" id="name" name="name" readonly placeholder=<%=name %>><br><br>
+                        <label for="DateOfBirth">Date of Birth:</label>
+                        <input class="input1" type="text" id="DOB" name="DOB" readonly placeholder=<%=DOB %>><br><br>
+                        <label for="Patient ID">Patient ID:</label>
+                        <input class="input1" type="text" id="PID" readonly placeholder=<%=PID %>><br><br>
+                    </form>
+
+                </div>
+                <table>
+                    <br>
+                    <form id="patient_data">
+                        <tr>
+                            <td>
+                                <label for="q1">How are you feeling now ? </label>
+                            </td>
+                            <td>
+                                <select id="question1" name="q1">
+                                    <option value="1" selected="selected">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="q2">How is the pain now ?</label>
+                            </td>
+                            <td><select id="question2" name="q2">
+                                    <option value="1" selected="selected">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="q3">Are you done with your meal ?</label>
+                            </td>
+                            <td><select id="question3" name="q3">
+                                    <option value="Yes" selected="selected">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+                <br>
+                <input id="information_submit" type="submit" class="block" form="patient_data"
+                    style="margin-left:50px ;"></button>
+            </div>
+
+            <div class="Column ColumnMain">
+                <table class="table_center">
+                    <tr class="tr_center">
+                        <td class="td_center">
+                            <div class="Doc_instruction">
+                                Instruction From Doctor’s Guidecbsudebvsudvusdvsudvbsiucsubciusbcisbcisbcisb
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table class="table_center">
+                    <tr class="tr_center">
+                        <td class="td_center">
+                            <div class="exercise_block">
+                                <div class="containerR">
+                                    <ul>
+                                        <li  onclick="alert('Day1');"> <div class="bottom">
+                                           <!-- <ol>
+                                            <li>Elbow Curl</li>
+                                            <li>Steps : 2</li>
+                                            <li>Sets  : 3</li>
+                                            <li>Category : 1</li> -->
+                                         </div> </li>
+                                        <li  onclick="alert('Day2');"> <div class="bottom"></div> </li>
+                                        <li  onclick="alert('Day3');"> <div class="bottom"></div> </li>
+                                        <li  onclick="alert('Day4');"> <div class="bottom"></div> </li>
+                                        <li  onclick="alert('Day5');"> <div class="bottom"></div> </li>
+                                        <li  onclick="alert('Day6');"> <div class="bottom"></div> </li>
+                                        <li  onclick="alert('Day7');"> <div class="bottom"></div> </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Column ColumnMain">
+                <div class="docprofile">
+                    <center>
+                        <p>Doctor Profile</p><img class="img_profile" src="images/Profile.png" alt="">
+                    </center>
+                    <form>
+                        <br>
+                        <br>
+                        <br>
+                        <label for="Doctor Name">Doctor Name:</label>
+                        <input class="input1" type="text" id="Doctor_name" readonly placeholder=<%=Doctor_name
+                            %>><br><br>
+                        <label for="Doctor Number">Doctor ID:</label>
+                        <input class="input1" type="text" id="Doctor_ID" readonly placeholder=<%=Doctor_ID %>><br><br>
+                        <label for="Doctor Number">Doctor Number:</label>
+                        <input class="input1" type="text" id="Doctor_number" readonly placeholder=<%=Doctor_no
+                            %>><br><br>
+                        <label for="Doctor Number">Specialization:</label>
+                        <input class="input1" type="text" id="Doctor_email" readonly placeholder=<%=Specialization
+                            %>><br><br>
+                        <label for="Doctor Number">Doctor email:</label>
+                        <input class="input1" type="text" id="Doctor_email" readonly placeholder=<%=Doctor_email %>><br>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="Row">
+            <div class="Column1 ColumnMain1 block_oth">
+                <br>
+                <center> <b>
+                        <%=date%>
+                            <%=time%>
+                    </b></center>
+            </div>
+            <div class="Column1 ColumnMain1 block_dis">
+                <br>
+                <center><b>Legal Content/Disclaimer</b> : The above tool is based on interpretation . In case of any
+                    disparity between the
+                    clinical and radiological findings, a repeat/review examination may be requested.
+                    This report is not valid for medico-legal purposes.</center>
+            </div>
+            <div class="Column1 ColumnMain1">
+                <button type="button" class="block_SOS"><a href="/">SOS</a></button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

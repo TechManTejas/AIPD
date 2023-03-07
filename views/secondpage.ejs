@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">FITTLYF</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
+<div class="container-fluid" style="border: 2px solid;padding: 10px;">
+  <div class="row">
+    <div class="col-sm-3" style="border: 2px solid; padding: 10px;">
+       
+        <div class="userprofile" style="
+          width: 200px;
+          margin-left: 75px;">
+            <center>
+                <p>User Profile</p><img class="img_profile" src="images/Profile.png" alt="">
+            </center>
+            <form>
+                <br>
+                <label for="name">Name:</label>
+                <input class="input1" type="text" id="name" name="name" readonly placeholder=<%=name %>><br><br>
+                <label for="DateOfBirth">Date of Birth:</label>
+                <input class="input1" type="text" id="DOB" name="DOB" readonly placeholder=<%=DOB %>><br><br>
+                <label for="Patient ID">Patient ID:</label>
+                <input class="input1" type="text" id="PID" readonly placeholder=<%=PID %>><br>  
+            </form>
+        </div>
+        <table class="table">
+            <br>
+            <form id="patient_data">
+                <tr>
+                    <td>
+                        <label for="q1">How are you feeling now ? </label>
+                    </td>
+                    <td>
+                        <select id="question1" name="q1">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="q2">How is the pain now ?</label>
+                    </td>
+                    <td><select id="question2" name="q2">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="q3">Are you done with your meal ?</label>
+                    </td>
+                    <td><select id="question3" name="q3">
+                            <option value="Yes" selected="selected">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </td>
+                </tr>
+            </form>
+        </table>
+
+    </div>
+    <div class="col-sm-6" style="border: 2px solid; padding: 10px;">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-3" style="border: 2px solid; padding: 10px;">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
