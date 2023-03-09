@@ -55,7 +55,7 @@ var hcolor_code = "#FF0000"
 var lcolor_code = "#FF0000"
 var color_code = "#000000"
 var speed_avg=[]
-var time_avg=[]
+var time_avg=[] // every rep
 
 import {coordinates} from './coord.mjs'
 
@@ -142,8 +142,7 @@ function onResults(results) {
 
   canvasCtx1.save();
   canvasCtx1.clearRect(0, 0, canvasElement1.width, canvasElement1.height);
-  canvasCtx1.drawImage(
-    results.image, 0, 0, canvasElement1.width, canvasElement1.height);
+  canvasCtx1.drawImage(results.image, 0, 0, canvasElement1.width, canvasElement1.height);
   canvasCtx2.save();
   canvasCtx2.clearRect(0, 0, canvasElement2.width, canvasElement2.height);
   canvasCtx2.drawImage(
@@ -209,8 +208,8 @@ function onResults(results) {
     // / NOSE */
     var nose = [landmarks[POSE_LANDMARKS.NOSE].x, landmarks[POSE_LANDMARKS.NOSE].y]
     // /CUSTOM KEYPOINTS  HIP CENETER AND SHOULDER CENTER*/
-    var hc = [(rhip[0] + lhip[0]) / 2, (rhip[1] + lhip[1]) / 2]
-    var sc = [(rshoulder[0] + lshoulder[0]) / 2, (rshoulder[1] + lshoulder[1]) / 2]
+    var hc = [(rhip[0] + lhip[0]) / 2, (rhip[1] + lhip[1]) / 2] //head center 
+    var sc = [(rshoulder[0] + lshoulder[0]) / 2, (rshoulder[1] + lshoulder[1]) / 2] //shoulder center
 
 
 
